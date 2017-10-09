@@ -1,8 +1,9 @@
 # node-deep-includes
 node.js, array or object deep includes.
 
-## use
+## usage
 
+````
 const deepIncludes = require('../'),
       assert       = require('tap');
 
