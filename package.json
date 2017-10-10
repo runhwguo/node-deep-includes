@@ -1,7 +1,7 @@
 {
   "name": "node-deep-includes",
-  "version": "1.0.0",
-  "description": "node.js, array or object deep includes. ",
+  "version": "1.0.1",
+  "description": "node.js, array or object deep includes.",
   "main": "index.js",
   "scripts": {
     "test": "cd test && node test_deep_includes.js && cd .."
@@ -18,11 +18,13 @@
   "license": "ISC",
   "dependencies": {
     "deep-equal": "^1.0.1",
-    "isobject": "^3.0.1",
-    "tap": "^10.7.2"
+    "isobject": "^3.0.1"
   },
   "bugs": {
     "url": "https://github.com/runhwguo/node-deep-includes/issues"
   },
-  "homepage": "https://github.com/runhwguo/node-deep-includes#readme"
+  "homepage": "https://github.com/runhwguo/node-deep-includes#readme",
+  "devDependencies": {
+    "tap": "^10.7.2"
+  }
 }
