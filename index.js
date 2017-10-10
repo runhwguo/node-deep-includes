@@ -11,20 +11,27 @@ function _deepTraverseObj(obj, expected) {
       if (_deepTraverseObj(value, expected)) {
         return true;
       }
+    } else {
+
     }
   }
   return false;
 }
 
-function deepIncludes(container, expected, opt) {
-  if (Array.isArray(container)) {
-    return container.some(item => {
+function deepIncludes(actual, expected, opt = {}) {
+  if (Array.isArray(actual)) {
+    return actual.some(item => {
       return equal(item, expected, opt);
     })
-  } else if (isObject(container)) {
-    return _deepTraverseObj(container, expected);
+  } else if (isObject(actual)) {
+    if (isObject(expected)) {
+      return _deepTraverseObj(actual, expected);
+    } else {
+      console.warn('actual is object, expected also should be object and not null!, but expected=', expected);
+      return false;
+    }
   } else {
-    throw Error('params is illegal, should be array or object');
+    return equal(actual, expected, opt);
   }
 }
 

@@ -1,5 +1,5 @@
 # node-deep-includes
-node.js, array or object deep includes.
+Array or Object deep includes.
 
 ## usage
 
@@ -20,15 +20,24 @@ const obj = {
   b: 2
 };
 
+// array deepIncludes
 deepIncludes(arr, 1); // true
 deepIncludes(arr, 4); // false
 
-// strict equal
 deepIncludes(arr, '1'); // true
-deepIncludes(arr, '1', {strict: true}); // false
+deepIncludes(arr, '1', {strict: true}); // false strict equal
 
+// object deepIncludes
 deepIncludes(obj, {}); // false
-deepIncludes(obj, {a: {}}); // false
+deepIncludes(obj, {b: 2}); // false
+deepIncludes(obj, {f: 1}); // true
 deepIncludes(obj, {e: {f: 1}}); // true
 
 deepIncludes(obj, null); // false
+deepIncludes(obj, [4]); // false
+
+// general equal
+deepIncludes(1, null); // false
+deepIncludes(1, 1); // true
+deepIncludes(undefined, 1); // false
+deepIncludes(null, null); // true
