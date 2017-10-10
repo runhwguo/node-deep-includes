@@ -4,8 +4,7 @@ node.js, array or object deep includes.
 ## usage
 
 ````
-const deepIncludes = require('../'),
-      assert       = require('tap');
+const deepIncludes = require('node-deep-includes');
 
 const arr = [1, 2, 3];
 
@@ -21,15 +20,15 @@ const obj = {
   b: 2
 };
 
-assert.equal(deepIncludes(arr, 1), true);
-assert.equal(deepIncludes(arr, 4), false);
+deepIncludes(arr, 1); // true
+deepIncludes(arr, 4); // false
 
 // strict equal
-assert.equal(deepIncludes(arr, '1'), true);
-assert.equal(deepIncludes(arr, '1', {strict: true}), false);
+deepIncludes(arr, '1'); // true
+deepIncludes(arr, '1', {strict: true}); // false
 
-assert.equal(deepIncludes(obj, {}), false);
-assert.equal(deepIncludes(obj, {a: {}}), false);
-assert.equal(deepIncludes(obj, {e: {f: 1}}), true);
+deepIncludes(obj, {}); // false
+deepIncludes(obj, {a: {}}); // false
+deepIncludes(obj, {e: {f: 1}}); // true
 
-assert.equal(deepIncludes(obj, null), false);
+deepIncludes(obj, null); // false
