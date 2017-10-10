@@ -1,6 +1,6 @@
 {
   "name": "node-deep-includes",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "node.js, array or object deep includes.",
   "main": "index.js",
   "scripts": {
